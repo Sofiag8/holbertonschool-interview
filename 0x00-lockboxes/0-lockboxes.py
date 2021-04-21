@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Unlocking boxes module """
 
+
 def canUnlockAll(boxes):
     """
     check if all boxes can be unlocked method
@@ -15,7 +16,8 @@ def canUnlockAll(boxes):
     keys_stack = [0]
     locked_box = 0
     unlocked_box = 1
-    unlocked_checker = [unlocked_box] + [locked_box] * (len(boxes) - 1)  # first boxes index will be always unlocked
+    # first boxes index will be always unlocked
+    unlocked_checker = [unlocked_box] + [locked_box] * (len(boxes) - 1)
     if len(boxes) == 0:
         return True
     if not isinstance(boxes, list):
@@ -30,4 +32,3 @@ def canUnlockAll(boxes):
     if locked_box in unlocked_checker:
         return False
     return True
-
