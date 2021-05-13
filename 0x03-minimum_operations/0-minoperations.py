@@ -1,25 +1,20 @@
 #!/usr/bin/python3
-"""
-Module that calculates the fewest number of operations
-needed to result in exactly n H characters in the file
-"""
+"""minimun"""
+
+from math import sqrt
 
 
 def minOperations(n):
-    """
-    checking minimun operations
-    """
-
-    min_number_operations = 0
-    available_operations = 2
-
-    if min_number_operations <= 1:
+    """obtain the minimun"""
+    min_operations = 0
+    if n <= 1:
         return 0
-
-    while n > 1:
-        if n % available_operations == 0:
-            n = n / available_operations
-            operations = min_number_operations + available_operations
-        else:
-            available_operations += 1
-    return min_number_operations
+    for i in range(2, int(sqrt(n) + 1)):
+        while n % i == 0:
+            min_operations = min_operations + i
+            n = n / i
+            if n <= 1:
+                break
+    if n > 1:
+        min_operations = min_operations + int(n)
+    return min_operations
