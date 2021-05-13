@@ -12,6 +12,9 @@ def minOperations(n):
 
     min_number_operations = 0
     available_operations = 2
+
+    if min_number_operations < 1:
+        return 0
     while n > 1:
         if n % available_operations == 0:
             n = n / available_operations
