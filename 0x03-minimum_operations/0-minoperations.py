@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""minimun"""
+""" module that finds the minimun operations needed"""
 
 from math import sqrt
 
 
 def minOperations(n):
-    """obtain the minimun"""
+    """ checks minimun operations required """
     min_operations = 0
     if n <= 1:
         return 0
